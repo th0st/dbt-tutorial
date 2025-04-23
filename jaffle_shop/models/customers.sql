@@ -1,4 +1,6 @@
-with customers as (
+with 
+    /*
+    customers as (
 
     select
         id as customer_id,
@@ -35,9 +37,9 @@ customer_orders as (
     group by 1
 
 ),
-
+    */
 final as (
-
+    /*
     select
         customers.customer_id,
         customers.first_name,
@@ -49,7 +51,10 @@ final as (
     from customers
 
     left join customer_orders using (customer_id)
-
+    */
+    select *
+    from `dbt-tutorial.jaffle_shop.orders`
+    where id = 94
 )
 
 select * from final
